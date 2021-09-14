@@ -116,7 +116,7 @@ def elementwise_recurrence_gpu(U: Tensor,
     if amp_recurrence_fp16 and U.dtype == torch.float16:
         cast = torch.Tensor.half
     else:
-        cast = torch.Tensor.float
+        cast = torch.Tensor.double
 
     U = cast(U)
     x = cast(x)
